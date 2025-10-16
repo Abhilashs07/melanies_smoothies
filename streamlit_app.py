@@ -36,8 +36,12 @@ pd_df=my_dataframe.to_pandas()
 st.dataframe(pd_df)
 st.stop()
 
-ingredients_list = st.multiselect('choose upto 5 ingredients:',
-                                 my_dataframe, max_selections=5)
+ingredients_list = st.multiselect(
+  'choose upto 5 ingredients:'
+  ,my_dataframe
+  , max_selections=5
+)
+
 if len(ingredients_list) > 5:
     st.warning(f"You selected {len(ingredients_list)} ingredients. Only the 5 will be used from the dropdown.")
     ingredients_list = ingredients_list[:5]
@@ -49,7 +53,8 @@ if ingredients_list:
     for fruit_choosen in ingredients_list:
         ingredients_string += fruit_choosen + ' '
 
- 
+        search_on=pd_df.loc[pd_df['FRUIT_NAME'] == fruit_chosen, 'SEARCH_ON'].iloc[0]
+        st.write('The search value for ', fruit_chosen,' is ', search_on, '.')
 
       
         st.subheader(fruit_choosen + ' Nutrition Information')
