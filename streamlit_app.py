@@ -42,9 +42,9 @@ ingredients_list = st.multiselect(
   , max_selections=5
 )
 
-if len(ingredients_list) > 5:
-    st.warning(f"You selected {len(ingredients_list)} ingredients. Only the 5 will be used from the dropdown.")
-    ingredients_list = ingredients_list[:5]
+#if len(ingredients_list) > 5:
+ #   st.warning(f"You selected {len(ingredients_list)} ingredients. Only the 5 will be used from the dropdown.")
+  #  ingredients_list = ingredients_list[:5]
 
 if ingredients_list: 
     #st.write(ingredients_list)
