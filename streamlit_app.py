@@ -39,7 +39,7 @@ ingredients_list = st.multiselect('choose upto 5 ingredients:',
 #st.stop()            
 
 #convert the snowpark Dataframe to a Pandas Dataframe so we can use the LOC function
-pd_df=my_dataframe.to_pandas()
+pd_df=my_dataframe
 st.dataframe(pd_df)
 st.stop()
 
